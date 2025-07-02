@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance - AUTORVA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .performance-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        .performance-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .performance-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .performance-header h2 {
+            font-size: 2.5rem;
+            color: #f9cb28;
+            margin-bottom: 20px;
+        }
+
+        .performance-header p {
+            color: #fff;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .performance-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .performance-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .performance-icon {
+            font-size: 3rem;
+            color: #f9cb28;
+            margin-bottom: 20px;
+        }
+
+        .performance-title {
+            color: #f9cb28;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .performance-value {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .performance-description {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .specs-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .spec-icon {
+            font-size: 1.5rem;
+            color: #f9cb28;
+        }
+
+        .spec-info h4 {
+            color: #f9cb28;
+            margin-bottom: 5px;
+        }
+
+        .spec-info p {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .comparison-section {
+            margin-top: 50px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(249, 203, 40, 0.1);
+            color: #f9cb28;
+        }
+
+        .comparison-table td {
+            color: #fff;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .performance-header h2 {
+                font-size: 2rem;
+            }
+
+            .performance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include your header here -->
+    <header class="header">
+        <!-- Copy your existing header code here -->
+    </header>
+
+    <section class="performance-section">
+        <div class="performance-container">
+            <div class="performance-header">
+                <h2>Performance Metrics</h2>
+                <p>Explore the exceptional performance capabilities of our premium vehicles.</p>
+            </div>
+
+            <div class="performance-grid">
+                <div class="performance-card">
+                    <i class="fas fa-tachometer-alt performance-icon"></i>
+                    <h3 class="performance-title">Top Speed</h3>
+                    <div class="performance-value">305 km/h</div>
+                    <p class="performance-description">Experience the thrill of maximum velocity with our high-performance models.</p>
+                </div>
+
+                <div class="performance-card">
+                    <i class="fas fa-bolt performance-icon"></i>
+                    <h3 class="performance-title">Acceleration</h3>
+                    <div class="performance-value">3.1s</div>
+                    <p class="performance-description">From 0 to 100 km/h in record time, delivering instant power and response.</p>
+                </div>
+
+                <div class="performance-card">
+                    <i class="fas fa-horse performance-icon"></i>
+                    <h3 class="performance-title">Horsepower</h3>
+                    <div class="performance-value">617 HP</div>
+                    <p class="performance-description">Unleash the raw power of our high-performance engines.</p>
+                </div>
+            </div>
+
+            <div class="specs-section">
+                <h3 style="color: #f9cb28; margin-bottom: 30px; text-align: center;">Technical Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <i class="fas fa-cogs spec-icon"></i>
+                        <div class="spec-info">
+                            <h4>Engine Type</h4>
+                            <p>4.4L Twin-Turbo V8</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-tachometer-alt spec-icon"></i>
+                        <div class="spec-info">
+                            <h4>Transmission</h4>
+                            <p>8-Speed M Steptronic</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-car spec-icon"></i>
+                        <div class="spec-info">
+                            <h4>Drivetrain</h4>
+                            <p>M xDrive All-Wheel Drive</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-gas-pump spec-icon"></i>
+                        <div class="spec-info">
+                            <h4>Fuel Economy</h4>
+                            <p>8.9 L/100km</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <h3 style="color: #f9cb28; margin-bottom: 30px; text-align: center;">Performance Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Power (HP)</th>
+                                <th>0-100 km/h</th>
+                                <th>Top Speed</th>
+                                <th>Torque (Nm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BMW M5 Competition</td>
+                                <td>617</td>
+                                <td>3.1s</td>
+                                <td>305 km/h</td>
+                                <td>750</td>
+                            </tr>
+                            <tr>
+                                <td>Mercedes-AMG E63 S</td>
+                                <td>603</td>
+                                <td>3.4s</td>
+                                <td>300 km/h</td>
+                                <td>850</td>
+                            </tr>
+                            <tr>
+                                <td>Audi RS7 Sportback</td>
+                                <td>600</td>
+                                <td>3.6s</td>
+                                <td>280 km/h</td>
+                                <td>800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include your footer here -->
+    <footer class="footer">
+        <!-- Copy your existing footer code here -->
+    </footer>
+
+    <script>
+        // Add your JavaScript code here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any interactive features here
+        });
+    </script>
+</body>
+</html> 
+ 

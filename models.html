@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models - AUTORVA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .models-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        .models-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .models-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .models-header h2 {
+            font-size: 2.5rem;
+            color: #f9cb28;
+            margin-bottom: 20px;
+        }
+
+        .models-header p {
+            color: #fff;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .models-filter {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .model-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .model-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .model-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .model-card:hover .model-image img {
+            transform: scale(1.1);
+        }
+
+        .model-info {
+            padding: 20px;
+        }
+
+        .model-info h3 {
+            color: #f9cb28;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .model-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .spec-item i {
+            color: #f9cb28;
+        }
+
+        .model-price {
+            color: #f9cb28;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .model-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .model-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .details-btn {
+            background: #f9cb28;
+            color: #1a1a1a;
+        }
+
+        .details-btn:hover {
+            background: #e6b800;
+        }
+
+        .wishlist-btn {
+            background: transparent;
+            border: 1px solid #f9cb28;
+            color: #f9cb28;
+        }
+
+        .wishlist-btn:hover {
+            background: rgba(249, 203, 40, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .models-header h2 {
+                font-size: 2rem;
+            }
+
+            .models-filter {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include your header here -->
+    <header class="header">
+        <!-- Copy your existing header code here -->
+    </header>
+
+    <section class="models-section">
+        <div class="models-container">
+            <div class="models-header">
+                <h2>Explore Our Models</h2>
+                <p>Discover our extensive collection of premium vehicles, from luxury sedans to high-performance sports cars.</p>
+            </div>
+
+            <div class="models-filter">
+                <div class="filter-group">
+                    <select id="brandFilter" title="Filter by brand">
+                        <option value="">All Brands</option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="audi">Audi</option>
+                        <option value="porsche">Porsche</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="categoryFilter" title="Filter by category">
+                        <option value="">All Categories</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="sports">Sports Car</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="priceFilter" title="Filter by price range">
+                        <option value="">Price Range</option>
+                        <option value="0-50000">$0 - $50,000</option>
+                        <option value="50000-100000">$50,000 - $100,000</option>
+                        <option value="100000+">$100,000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="models-grid">
+                <!-- BMW M5 -->
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/192747/m5-exterior-right-front-three-quarter-2.jpeg" alt="BMW M5">
+                    </div>
+                    <div class="model-info">
+                        <h3>BMW M5 Competition</h3>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>617 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>750 Nm</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-stopwatch"></i>
+                                <span>3.1s</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>8.9 L/100km</span>
+                            </div>
+                        </div>
+                        <div class="model-price">$120,000</div>
+                        <div class="model-actions">
+                            <button class="model-btn details-btn" data-model="bmw-m5">View Details</button>
+                            <button class="model-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mercedes S-Class -->
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8" alt="Mercedes S-Class">
+                    </div>
+                    <div class="model-info">
+                        <h3>Mercedes-Benz S-Class</h3>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>429 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>520 Nm</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-stopwatch"></i>
+                                <span>4.9s</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>7.8 L/100km</span>
+                            </div>
+                        </div>
+                        <div class="model-price">$110,000</div>
+                        <div class="model-actions">
+                            <button class="model-btn details-btn" data-model="mercedes-s-class">View Details</button>
+                            <button class="model-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audi RS7 -->
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/48342/rs7-sportback-exterior-right-front-three-quarter-3.jpeg?q=80&q=80" alt="Audi RS7">
+                    </div>
+                    <div class="model-info">
+                        <h3>Audi RS7 Sportback</h3>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>600 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>800 Nm</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-stopwatch"></i>
+                                <span>3.6s</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>9.2 L/100km</span>
+                            </div>
+                        </div>
+                        <div class="model-price">$125,000</div>
+                        <div class="model-actions">
+                            <button class="model-btn details-btn" data-model="audi-rs7">View Details</button>
+                            <button class="model-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include your footer here -->
+    <footer class="footer">
+        <!-- Copy your existing footer code here -->
+    </footer>
+
+    <script>
+        // Add your JavaScript code here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filters = document.querySelectorAll('.filter-group select');
+            filters.forEach(filter => {
+                filter.addEventListener('change', function() {
+                    // Add your filtering logic here
+                    console.log('Filter changed:', this.value);
+                });
+            });
+
+            // Wishlist functionality
+            const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+            const carData = {
+                "bmw-m5": {
+                    id: "bmw-m5",
+                    name: "BMW M5 Competition",
+                    image: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/192747/m5-exterior-right-front-three-quarter-2.jpeg",
+                    price: "$120,000"
+                },
+                "mercedes-s-class": {
+                    id: "mercedes-s-class",
+                    name: "Mercedes-Benz S-Class",
+                    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8",
+                    price: "$110,000"
+                },
+                "audi-rs7": {
+                    id: "audi-rs7",
+                    name: "Audi RS7 Sportback",
+                    image: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/48342/rs7-sportback-exterior-right-front-three-quarter-3.jpeg?q=80&q=80",
+                    price: "$125,000"
+                }
+            };
+            function updateWishlistCount() {
+                const count = (JSON.parse(localStorage.getItem('wishlist')) || []).length;
+                const headerCount = document.querySelector('.wishlist-count');
+                if (headerCount) headerCount.textContent = count;
+            }
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    // Add to wishlist in localStorage
+                    const modelCard = this.closest('.model-card');
+                    const modelId = modelCard.querySelector('.details-btn').getAttribute('data-model');
+                    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                    const exists = wishlist.find(item => item.id === modelId);
+                    if (!exists) {
+                        wishlist.push(carData[modelId]);
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    } else {
+                        // Remove if already exists
+                        wishlist = wishlist.filter(item => item.id !== modelId);
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    }
+                    updateWishlistCount();
+                });
+            });
+            updateWishlistCount();
+
+            // Details button functionality
+            const detailsButtons = document.querySelectorAll('.details-btn');
+            detailsButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modelId = this.getAttribute('data-model');
+                    window.location.href = `model-detail.html?car=${modelId}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
+ 
